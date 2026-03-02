@@ -1,0 +1,70 @@
+# depslib dependency file v1.0
+1772464818 source:c:\users\user\desktop\gas\company.cpp
+	<iostream>
+	"Company.h"
+
+1772464818 c:\users\user\desktop\gas\company.h
+	<string>
+
+1772465460 source:c:\users\user\desktop\gas\employee.cpp
+	<iostream>
+	"Employee.h"
+
+1772465460 c:\users\user\desktop\gas\employee.h
+	<string>
+
+1772465460 source:c:\users\user\desktop\gas\manager.cpp
+	<iostream>
+	"Manager.h"
+
+1772465460 c:\users\user\desktop\gas\manager.h
+	<string>
+
+1772464818 source:c:\users\user\desktop\gas\companyhierarchy\company.cpp
+	<iostream>
+	"Company.h"
+
+1772464818 c:\users\user\desktop\gas\companyhierarchy\company.h
+	<string>
+
+1772464818 source:c:\users\user\desktop\gas\companyhierarchy\employee.cpp
+	<iostream>
+	"Employee.h"
+
+1772464818 c:\users\user\desktop\gas\companyhierarchy\employee.h
+	<string>
+
+1772464818 source:c:\users\user\desktop\gas\companyhierarchy\manager.cpp
+	<iostream>
+	"Manager.h"
+
+1772464818 c:\users\user\desktop\gas\companyhierarchy\manager.h
+	<string>
+
+1772476716 source:c:\Ñompanyhierarchy\employee.cpp
+	"Employee.h"
+	<iostream>
+
+1772476716 c:\Ñompanyhierarchy\employee.h
+	<string>
+
+1772476816 source:c:\Ñompanyhierarchy\company.cpp
+	"Company.h"
+	<iostream>
+
+1772476716 c:\Ñompanyhierarchy\company.h
+	<string>
+
+1772476716 source:c:\Ñompanyhierarchy\manager.cpp
+	"Manager.h"
+	<iostream>
+
+1772476716 c:\Ñompanyhierarchy\manager.h
+	<string>
+
+1772476716 source:c:\Ñompanyhierarchy\main.cpp
+	"Employee.h"
+	"Manager.h"
+	"Company.h"
+	<iostream>
+
