@@ -1,23 +1,29 @@
+#include "Person.h"
 #include "Employee.h"
 #include "Manager.h"
 #include "Company.h"
 #include <iostream>
 
 int main() {
-    Employee emp1("John", 5);
-    Employee emp2("Alice");
+    std::cout << "--- 1. Testing Hierarchy & Constructors Sequence ---" << std::endl;
+    Manager m1("Alice", 10, 5);
+    m1.show();
 
-    Manager m1("Robert", "IT");
-    Manager m2;
+    std::cout << "\n--- 2. Testing Composition (Has-A) ---" << std::endl;
+    Company c1("TechCorp", 1000000, m1);
+    c1.info();
 
-    Company c1("Cyberdyne", 1000000);
-    Company c2;
+    std::cout << "\n--- 3. Testing Copy/Move & Operator= ---" << std::endl;
+    Employee e1("Bob", 3);
+    Employee e2("Charlie", 5);
 
-    std::cout << "\n--- COMPANY REPORT ---\n";
-    c1.displayInfo();
-    m1.printStatus();
-    emp1.showInfo();
-    std::cout << "----------------------\n\n";
+    e2 = e1;
+    e2.show();
 
+    Employee e3("Temp", 0);
+    e3 = std::move(e1);
+    e3.show();
+
+    std::cout << "\n--- 4. Destructors Sequence ---" << std::endl;
     return 0;
 }

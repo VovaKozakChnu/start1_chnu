@@ -1,18 +1,16 @@
 #include "Company.h"
 #include <iostream>
 
-Company::Company() : title("Default Ltd"), budget(1000) {
-    std::cout << "Company default constructor called." << std::endl;
-}
-
-Company::Company(std::string t, int b) : title(t), budget(b) {
-    std::cout << "Company " << title << " initialized with budget " << budget << std::endl;
+Company::Company(std::string t, int b, const Manager& m) : title(t), budget(b), ceo(m) {
+    std::cout << "[Company] Created: " << title << std::endl;
 }
 
 Company::~Company() {
-    std::cout << "Company " << title << " liquidated." << std::endl;
+    std::cout << "[Company] Destroyed: " << title << std::endl;
 }
 
-void Company::displayInfo() {
+void Company::info() const {
     std::cout << "Company: " << title << " | Budget: $" << budget << std::endl;
+    std::cout << "CEO Info -> ";
+    ceo.show();
 }

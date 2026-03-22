@@ -1,19 +1,19 @@
 #ifndef EMPLOYEE_H
 #define EMPLOYEE_H
+#include "Person.h"
 
-#include <string>
-
-class Employee {
-private:
-    std::string name;
-    int experience;
-
+class Employee : public Person {
+protected:
+    int exp;
 public:
-    Employee(std::string n, int exp);
-    Employee(std::string n);
-    ~Employee();
+    Employee(const char* n = "Unknown", int e = 0);
+    Employee(const Employee& other);
+    Employee(Employee&& other) noexcept;
 
-    void showInfo();
+    Employee& operator=(const Employee& other);
+    Employee& operator=(Employee&& other) noexcept;
+
+    ~Employee() override;
+    void show() const override;
 };
-
 #endif

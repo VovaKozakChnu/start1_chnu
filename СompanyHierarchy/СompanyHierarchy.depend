@@ -41,30 +41,30 @@
 1772464818 c:\users\user\desktop\gas\companyhierarchy\manager.h
 	<string>
 
-1772476716 source:c:\Ñompanyhierarchy\employee.cpp
+1773330262 source:c:\Ñompanyhierarchy\employee.cpp
 	"Employee.h"
 	<iostream>
+	<cstring>
 
-1772476716 c:\Ñompanyhierarchy\employee.h
-	<string>
+1773330262 c:\Ñompanyhierarchy\employee.h
 
-1772476816 source:c:\Ñompanyhierarchy\company.cpp
+1773330262 source:c:\Ñompanyhierarchy\company.cpp
 	"Company.h"
+
+1773330262 c:\Ñompanyhierarchy\company.h
+	<string>
 	<iostream>
 
-1772476716 c:\Ñompanyhierarchy\company.h
-	<string>
-
-1772476716 source:c:\Ñompanyhierarchy\manager.cpp
+1773330262 source:c:\Ñompanyhierarchy\manager.cpp
 	"Manager.h"
 	<iostream>
 
-1772476716 c:\Ñompanyhierarchy\manager.h
+1773330262 c:\Ñompanyhierarchy\manager.h
 	<string>
 
-1772476716 source:c:\Ñompanyhierarchy\main.cpp
+1773330262 source:c:\Ñompanyhierarchy\main.cpp
 	"Employee.h"
-	"Manager.h"
 	"Company.h"
+	"Manager.h"
 	<iostream>
 

@@ -1,18 +1,13 @@
 #ifndef MANAGER_H
 #define MANAGER_H
+#include "Employee.h"
 
-#include <string>
-
-class Manager {
+class Manager : public Employee {
 private:
-    std::string name;
-    std::string department;
-
+    int teamSize;
 public:
-    Manager(std::string n = "Unknown", std::string dept = "General");
-    ~Manager();
-
-    void printStatus();
+    Manager(const char* n = "Unknown", int e = 0, int t = 0);
+    ~Manager() override;
+    void show() const override;
 };
-
 #endif
