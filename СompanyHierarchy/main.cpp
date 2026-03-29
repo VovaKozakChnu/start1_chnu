@@ -2,28 +2,49 @@
 #include "Employee.h"
 #include "Manager.h"
 #include "Company.h"
+#include "IPrintable.h"
 #include <iostream>
 
+void inspectPerson(const Person& p) {
+    std::cout << "--- Inspecting via Reference ---\n";
+    p.show();
+    p.performTask();
+}
+
 int main() {
-    std::cout << "--- 1. Testing Hierarchy & Constructors Sequence ---" << std::endl;
-    Manager m1("Alice", 10, 5);
-    m1.show();
+    std::cout << "=== 1. Static Method Binding Problem ===\n";
+    Employee emp1("Alice", 5);
+    Person* ptr1 = &emp1;
 
-    std::cout << "\n--- 2. Testing Composition (Has-A) ---" << std::endl;
-    Company c1("TechCorp", 1000000, m1);
-    c1.info();
+    ptr1->staticGreet();
 
-    std::cout << "\n--- 3. Testing Copy/Move & Operator= ---" << std::endl;
-    Employee e1("Bob", 3);
-    Employee e2("Charlie", 5);
+    std::cout << "\n=== 2 & 3. Virtual Functions & Base Pointer ===\n";
+    ptr1->show();
+    ptr1->getRole();
 
-    e2 = e1;
-    e2.show();
+    std::cout << "\n=== 5. Final Modifier ===\n";
+    Manager mgr1("Bob", 10, 4);
+    Person* ptr2 = &mgr1;
+    ptr2->getRole();
 
-    Employee e3("Temp", 0);
-    e3 = std::move(e1);
-    e3.show();
+    std::cout << "\n=== 6. Base Class Reference ===\n";
+    inspectPerson(emp1);
+    inspectPerson(mgr1);
 
-    std::cout << "\n--- 4. Destructors Sequence ---" << std::endl;
+    std::cout << "\n=== 8. Interfaces on Different Classes ===\n";
+    Company comp1("TechCorp");
+
+    IPrintable* items[2];
+    items[0] = &emp1;
+    items[1] = &comp1;
+
+    for (int i = 0; i < 2; i++) {
+        items[i]->printInfo();
+    }
+
+    std::cout << "\n=== 4. Virtual Destructors ===\n";
+    Person* pDestroy = new Manager("Charlie", 15, 10);
+    delete pDestroy;
+
     return 0;
 }
