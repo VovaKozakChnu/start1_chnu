@@ -1,19 +1,22 @@
 #ifndef EMPLOYEE_H
 #define EMPLOYEE_H
 #include "Person.h"
+#include "IPrintable.h"
 
-class Employee : public Person {
+class Employee : public Person, public IPrintable {
 protected:
     int exp;
 public:
-    Employee(const char* n = "Unknown", int e = 0);
-    Employee(const Employee& other);
-    Employee(Employee&& other) noexcept;
-
-    Employee& operator=(const Employee& other);
-    Employee& operator=(Employee&& other) noexcept;
-
+    Employee(std::string n = "Unknown", int e = 0);
     ~Employee() override;
+
+    void staticGreet() const;
+
     void show() const override;
+    void getRole() const override;
+    void performTask() const override;
+
+    void printInfo() const override;
 };
+
 #endif
