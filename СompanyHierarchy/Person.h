@@ -1,18 +1,20 @@
 #ifndef PERSON_H
 #define PERSON_H
+#include <string>
 
 class Person {
 protected:
-    char* name;
+    std::string name;
 public:
-    Person(const char* n = "Unknown");
-    Person(const Person& other);
-    Person(Person&& other) noexcept;
-
-    Person& operator=(const Person& other);
-    Person& operator=(Person&& other) noexcept;
-
+    Person(std::string n = "Unknown");
     virtual ~Person();
+
+    void staticGreet() const;
+
     virtual void show() const;
+    virtual void getRole() const;
+
+    virtual void performTask() const = 0;
 };
+
 #endif
