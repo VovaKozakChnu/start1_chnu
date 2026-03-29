@@ -1,16 +1,14 @@
 #ifndef COMPANY_H
 #define COMPANY_H
+#include "IPrintable.h"
 #include <string>
-#include "Manager.h"
 
-class Company {
+class Company : public IPrintable {
 private:
     std::string title;
-    int budget;
-    Manager ceo;
 public:
-    Company(std::string t, int b, const Manager& m);
-    ~Company();
-    void info() const;
+    Company(std::string t);
+    void printInfo() const override;
 };
+
 #endif
