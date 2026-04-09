@@ -9,12 +9,8 @@ public:
     Person(std::string n = "Unknown");
     virtual ~Person();
 
-    void staticGreet() const;
-
     virtual void show() const;
     virtual void getRole() const;
-
-    virtual void performTask() const = 0;
+    virtual void performTask() const;
 };
-
 #endif
