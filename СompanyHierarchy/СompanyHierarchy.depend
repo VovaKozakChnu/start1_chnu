@@ -41,21 +41,22 @@
 1772464818 c:\users\user\desktop\gas\companyhierarchy\manager.h
 	<string>
 
-1774807891 source:c:\Ñompanyhierarchy\employee.cpp
+1775743459 source:c:\Ñompanyhierarchy\employee.cpp
 	"Employee.h"
 	<iostream>
 
-1774807891 c:\Ñompanyhierarchy\employee.h
+1775743459 c:\Ñompanyhierarchy\employee.h
 	"Person.h"
-	"IPrintable.h"
 
-1774807891 source:c:\Ñompanyhierarchy\company.cpp
+1775743459 source:c:\Ñompanyhierarchy\company.cpp
 	"Company.h"
+	"Exceptions.h"
 	<iostream>
 
-1774807891 c:\Ñompanyhierarchy\company.h
-	"IPrintable.h"
+1775743459 c:\Ñompanyhierarchy\company.h
 	<string>
+	<fstream>
+	<vector>
 
 1774807891 source:c:\Ñompanyhierarchy\manager.cpp
 	"Manager.h"
@@ -64,15 +65,12 @@
 1774807891 c:\Ñompanyhierarchy\manager.h
 	"Employee.h"
 
-1774807891 source:c:\Ñompanyhierarchy\main.cpp
-	"Person.h"
-	"Employee.h"
-	"Manager.h"
-	"Company.h"
-	"IPrintable.h"
+1775743459 source:c:\Ñompanyhierarchy\main.cpp
 	<iostream>
+	"Company.h"
+	"Exceptions.h"
 
-1774807891 c:\Ñompanyhierarchy\person.h
+1775743459 c:\Ñompanyhierarchy\person.h
 	<string>
 
 1774807891 source:c:\Ñompanyhierarchy\person.cpp
@@ -80,4 +78,7 @@
 	<iostream>
 
 1774807891 c:\Ñompanyhierarchy\iprintable.h
+
+1775743459 c:\Ñompanyhierarchy\exceptions.h
+	<exception>
 

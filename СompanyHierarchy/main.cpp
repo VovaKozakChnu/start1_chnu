@@ -1,50 +1,42 @@
-#include "Person.h"
-#include "Employee.h"
-#include "Manager.h"
-#include "Company.h"
-#include "IPrintable.h"
 #include <iostream>
+#include "Company.h"
+#include "Exceptions.h"
 
-void inspectPerson(const Person& p) {
-    std::cout << "--- Inspecting via Reference ---\n";
-    p.show();
-    p.performTask();
+void runAdmin(Company& c) {
+    std::string pass;
+    std::cout << "Enter Admin Password: ";
+    std::cin >> pass;
+
+    if (pass != "admin123") throw AuthException(); // ѕункт 3 та 9 [cite: 20, 29]
+
+    int choice = -1;
+    while (choice != 0) {
+        std::cout << "\n--- ADMIN MENU ---\n1. Update Budget\n2. Save to File\n0. Logout\nChoice: ";
+        std::cin >> choice;
+        if (choice == 1) {
+            int b; std::cout << "New budget: "; std::cin >> b;
+            c.updateBudget(b);
+        } else if (choice == 2) {
+            c.saveToDb();
+            std::cout << "Data saved!\n";
+        }
+    }
 }
 
 int main() {
-    std::cout << "=== 1. Static Method Binding Problem ===\n";
-    Employee emp1("Alice", 5);
-    Person* ptr1 = &emp1;
+    Company myComp;
+    try { myComp.loadFromDb(); } catch(...) {}
 
-    ptr1->staticGreet();
-
-    std::cout << "\n=== 2 & 3. Virtual Functions & Base Pointer ===\n";
-    ptr1->show();
-    ptr1->getRole();
-
-    std::cout << "\n=== 5. Final Modifier ===\n";
-    Manager mgr1("Bob", 10, 4);
-    Person* ptr2 = &mgr1;
-    ptr2->getRole();
-
-    std::cout << "\n=== 6. Base Class Reference ===\n";
-    inspectPerson(emp1);
-    inspectPerson(mgr1);
-
-    std::cout << "\n=== 8. Interfaces on Different Classes ===\n";
-    Company comp1("TechCorp");
-
-    IPrintable* items[2];
-    items[0] = &emp1;
-    items[1] = &comp1;
-
-    for (int i = 0; i < 2; i++) {
-        items[i]->printInfo();
+    int role = -1;
+    while (role != 0) {
+        std::cout << "\n=== MAIN MENU ===\n1. Admin Mode\n2. User Mode\n0. Exit\nRole: ";
+        std::cin >> role;
+        try {
+            if (role == 1) runAdmin(myComp);
+            else if (role == 2) myComp.printInfo();
+        } catch (const std::exception& e) {
+            std::cerr << "!!! " << e.what() << " !!!\n";
+        }
     }
-
-    std::cout << "\n=== 4. Virtual Destructors ===\n";
-    Person* pDestroy = new Manager("Charlie", 15, 10);
-    delete pDestroy;
-
     return 0;
 }
