@@ -36,6 +36,7 @@
 		<Unit filename="Company.h" />
 		<Unit filename="Employee.cpp" />
 		<Unit filename="Employee.h" />
+		<Unit filename="IPrintable.h" />
 		<Unit filename="Manager.cpp" />
 		<Unit filename="Manager.h" />
 		<Unit filename="Person.cpp" />

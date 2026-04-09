@@ -41,30 +41,43 @@
 1772464818 c:\users\user\desktop\gas\companyhierarchy\manager.h
 	<string>
 
-1773330262 source:c:\Ñompanyhierarchy\employee.cpp
+1774807891 source:c:\Ñompanyhierarchy\employee.cpp
 	"Employee.h"
 	<iostream>
-	<cstring>
 
-1773330262 c:\Ñompanyhierarchy\employee.h
+1774807891 c:\Ñompanyhierarchy\employee.h
+	"Person.h"
+	"IPrintable.h"
 
-1773330262 source:c:\Ñompanyhierarchy\company.cpp
+1774807891 source:c:\Ñompanyhierarchy\company.cpp
 	"Company.h"
-
-1773330262 c:\Ñompanyhierarchy\company.h
-	<string>
 	<iostream>
 
-1773330262 source:c:\Ñompanyhierarchy\manager.cpp
+1774807891 c:\Ñompanyhierarchy\company.h
+	"IPrintable.h"
+	<string>
+
+1774807891 source:c:\Ñompanyhierarchy\manager.cpp
 	"Manager.h"
 	<iostream>
 
-1773330262 c:\Ñompanyhierarchy\manager.h
+1774807891 c:\Ñompanyhierarchy\manager.h
+	"Employee.h"
+
+1774807891 source:c:\Ñompanyhierarchy\main.cpp
+	"Person.h"
+	"Employee.h"
+	"Manager.h"
+	"Company.h"
+	"IPrintable.h"
+	<iostream>
+
+1774807891 c:\Ñompanyhierarchy\person.h
 	<string>
 
-1773330262 source:c:\Ñompanyhierarchy\main.cpp
-	"Employee.h"
-	"Company.h"
-	"Manager.h"
+1774807891 source:c:\Ñompanyhierarchy\person.cpp
+	"Person.h"
 	<iostream>
+
+1774807891 c:\Ñompanyhierarchy\iprintable.h
 
